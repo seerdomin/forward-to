@@ -1,0 +1,34 @@
+{
+  "name": "forward-to",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Forward method calls from one object to another",
+  "main": "index.js",
+  "scripts": {
+    "lint": "jshint index.js --verbose --reporter=node_modules/jshint-stylish",
+    "test": "tape ./test.js | tap-spec",
+    "prebuild": "mkdir -p ./dist ",
+    "build": "browserify -d -s forward -g uglifyify ./index.js | exorcist ./dist/forward-to.min.js.map > ./dist/forward-to.min.js"
+  },
+  "keywords": [
+    "forward",
+    "method"
+  ],
+  "author": "Jean-Noël Namory",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seerdomin/forward-to.git"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.0",
+    "eslint": "^0.24.1",
+    "exorcist": "^0.4.0",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.0.1",
+    "sinon": "^1.15.4",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.1",
+    "uglifyify": "^3.0.1"
+  }
+}

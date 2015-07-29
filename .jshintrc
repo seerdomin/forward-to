@@ -1,0 +1,15 @@
+{
+    "maxerr"  : 10,
+    "curly"   : true,
+    "eqeqeq"  : true,
+    "forin"   : true,
+    "indent"  : 4,
+    "noarg"   : true,
+    "noempty" : true,
+    "undef"   : true,
+    "unused"  : true,
+    "strict"  : true,
+    "es5"     : false,
+    "browser" : true,
+    "node"    : true
+}
