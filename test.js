@@ -4,6 +4,9 @@ var test = require('tape');
 var sinon = require('sinon');
 var forward = require('./');
 
+if (process.env.NODE_ENV && process.env.NODE_ENV === 'coverage') {
+    test.createStream();
+}
 
 test('String-based forwarding', function(t) {
     var receiver, provider, methods, spy;
