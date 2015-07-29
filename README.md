@@ -1,6 +1,6 @@
 # forward-to
 
-Utility function for method call forwarding from one object to another one
+Utility function for method call forwarding from one object to another
 
 ## Installation
 
