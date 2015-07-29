@@ -1,6 +1,5 @@
 {
   "name": "forward-to",
-  "private": true,
   "version": "0.0.1",
   "description": "Forward method calls from one object to another",
   "main": "index.js",
