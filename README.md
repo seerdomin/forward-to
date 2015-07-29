@@ -2,6 +2,8 @@
 
 Utility function for method call forwarding from one object to another
 
+[![Build Status](https://travis-ci.org/seerdomin/forward-to.svg?branch=master)](https://travis-ci.org/seerdomin/forward-to)
+
 ## Installation
 
 via npm
