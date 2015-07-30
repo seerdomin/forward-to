@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+var shell = require('shelljs');
+var path = require('path');
+
+var DIR = path.resolve(__dirname, '..');
+var CMD = shell.which('tape');
+var ARG = ' ./test.js | tap-spec --color';
+
+shell.cd(DIR);
+shell.exec(CMD + ARG, {'async': false});

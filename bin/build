@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+var fs = require('fs');
+var path = require('path');
+var shell = require('shelljs');
+
+var PACKG_DIR = path.resolve(__dirname, '..');
+var BUILD_DIR = path.join(PACKG_DIR, 'dist');
+var BUILD_CMD = 'browserify -d -s forward -g uglifyify ./index.js | exorcist ./dist/forward-to.min.js.map';
+
+shell.cd(PACKG_DIR);
+
+shell.mkdir('-p', BUILD_DIR);
+
+shell.exec(BUILD_CMD, {async: false, silent: true}, function(code, output) {
+    var file = path.resolve('./dist/forward-to.min.js');
+
+    fs.writeFileSync(file, output);
+
+    console.info('  - file : ', file);
+    console.info('  - size : ', file, '\n');
+
+    process.exit(code);
+});

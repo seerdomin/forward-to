@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+var shell = require('shelljs');
+var path = require('path');
+
+var DIR = path.resolve(__dirname, '..');
+var CMD = 'FORCE_COLOR=1 ' + shell.which('jshint');
+var ARG = ' index.js --verbose --reporter=node_modules/jshint-stylish';
+
+shell.cd(DIR);
+shell.exec(CMD + ARG, {'async': false});
