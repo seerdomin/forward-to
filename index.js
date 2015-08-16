@@ -1,5 +1,6 @@
 'use strict';
 var slice = [].slice;
+var getMethods = require('object-methods');
 
 module.exports = forward;
 
@@ -19,16 +20,6 @@ function forward(receiver, provider, methods) {
     });
 
     return receiver;
-}
-
-function getMethods(provider) {
-    var methods = isMethod.bind(null, provider);
-
-    return Object.keys(provider).filter(methods);
-}
-
-function isMethod(provider, name) {
-    return (typeof provider[name] === 'function');
 }
 
 function forwardMethod(receiver, provider, name) {

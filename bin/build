@@ -2,6 +2,7 @@
 var fs = require('fs');
 var path = require('path');
 var shell = require('shelljs');
+var fileSize = require('file-size');
 
 var PACKG_DIR = path.resolve(__dirname, '..');
 var BUILD_DIR = path.join(PACKG_DIR, 'dist');
@@ -13,11 +14,12 @@ shell.mkdir('-p', BUILD_DIR);
 
 shell.exec(BUILD_CMD, {async: true, silent: true}, function(code, output) {
     var file = path.resolve('./dist/forward-to.min.js');
+    var size = fileSize(output.length).human('jedec');
 
     fs.writeFileSync(file, output);
 
     console.info('  - file : ', file);
-    console.info('  - size : ', file, '\n');
+    console.info('  - size : ', size, '\n');
 
     process.exit(code);
 });
