@@ -24,6 +24,7 @@
     "browserify": "^11.0.0",
     "eslint": "^0.24.1",
     "exorcist": "^0.4.0",
+    "file-size": "^1.0.0",
     "istanbul": "^0.3.17",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
