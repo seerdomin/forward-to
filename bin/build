@@ -11,7 +11,7 @@ shell.cd(PACKG_DIR);
 
 shell.mkdir('-p', BUILD_DIR);
 
-shell.exec(BUILD_CMD, {async: false, silent: true}, function(code, output) {
+shell.exec(BUILD_CMD, {async: true, silent: true}, function(code, output) {
     var file = path.resolve('./dist/forward-to.min.js');
 
     fs.writeFileSync(file, output);

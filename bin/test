@@ -7,4 +7,4 @@ var CMD = shell.which('tape');
 var ARG = ' ./test.js | tap-spec --color';
 
 shell.cd(DIR);
-shell.exec(CMD + ARG, {'async': false});
+shell.exec(CMD + ARG, {'async': true});

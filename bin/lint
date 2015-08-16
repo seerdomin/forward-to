@@ -7,4 +7,4 @@ var CMD = 'FORCE_COLOR=1 ' + shell.which('jshint');
 var ARG = ' index.js --verbose --reporter=node_modules/jshint-stylish';
 
 shell.cd(DIR);
-shell.exec(CMD + ARG, {'async': false});
+shell.exec(CMD + ARG, {'async': true});
