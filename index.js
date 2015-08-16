@@ -35,7 +35,7 @@ function forwardMethod(receiver, provider, name) {
     receiver[name] = function forwardedMethod() {
         var args = slice.call(arguments);
         var func = provider[name];
-        var result = func.apply(this, args);
+        var result = func.apply(provider, args);
 
         return (result === provider) ? this : result;
     };
